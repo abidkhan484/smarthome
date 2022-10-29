@@ -1,7 +1,7 @@
 const routes = require("./controller");
 const {
   authenticateRequest,
-//   authorizeRequest,
+  //   authorizeRequest,
 } = require("../../common/middlewares");
 const { name: ModelName } = require("./model");
 
@@ -18,6 +18,11 @@ const init = async (app) => {
     processRequest,
     routes
   );
+
+  app.use(() => {
+    require("./mqtt-handler");
+  });
+
   return app;
 };
 
