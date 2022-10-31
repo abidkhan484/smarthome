@@ -10,6 +10,7 @@ const {
 const { validate } = require("./request");
 const { handleValidation } = require("../../common/middlewares");
 const { getQuery } = require("./service");
+const logger = require("../../core/logger");
 
 const router = express.Router();
 
@@ -25,12 +26,13 @@ const countHandler = async (req, res, next) => {
 
 const updateDeviceStatus = async (req, res, next) => {
   const { topic, status } = req.body;
-  await updateHandler(req, res, next);
+  logger.info(`Broker emit is starting`);
   eventEmitter.emit("msgToBroker", {
     userId: req.user.id,
     topic: topic,
     status: status,
   });
+  await updateHandler(req, res, next);
 };
 
 router.get("/detail", getByIdHandler);
