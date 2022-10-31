@@ -8,7 +8,8 @@
         "email": "superadmin@mernboilerplate.com",
         "roleId": "",
         "roleAlias": "Super Admin",
-        "password": "mern-boilerplate"
+        "password": "mern-boilerplate",
+        "brokerPassword": "password"
     },
     {
         "firstName": "Admin",
@@ -19,7 +20,8 @@
         "email": "admin@mernboilerplate.com",
         "roleId": "",
         "roleAlias": "Admin",
-        "password": "mern-boilerplate"
+        "password": "mern-boilerplate",
+        "brokerPassword": "password"
     },
     {
         "firstName": "User",
@@ -30,6 +32,7 @@
         "email": "user@mernboilerplate.com",
         "roleId": "",
         "roleAlias": "User",
-        "password": "mern-boilerplate"
+        "password": "mern-boilerplate",
+        "brokerPassword": "password"
     }
 ]

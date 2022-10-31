@@ -15,7 +15,7 @@ const sendPasswordResetEmail = async (to, subject, token) => {
 
   const msg = {
     to: recipient, // Change to your recipient
-    from: process.env.EMAIL_SENDER || "info@bizbook365.com", // Change to your verified sender
+    from: process.env.EMAIL_SENDER || "misc788@gmail.com", // Change to your verified sender
     subject,
     text: token,
     html: getPasswordResetHtml(token),
@@ -33,7 +33,7 @@ const sendPasswordResetSuccessfulEmail = async (to, subject) => {
 
   const msg = {
     to: recipient, // Change to your recipient
-    from: process.env.EMAIL_SENDER || "info@bizbook365.com", // Change to your verified sender
+    from: process.env.EMAIL_SENDER || "misc788@gmail.com", // Change to your verified sender
     subject,
     text: "Password reset successful",
     html: getPasswordResetSuccessfulHtml(),
@@ -51,7 +51,7 @@ const sendAccountCreatedEmail = async (to, subject, token, user) => {
 
   const msg = {
     to: recipient, // Change to your recipient
-    from: process.env.EMAIL_SENDER || "info@bizbook365.com", // Change to your verified sender
+    from: process.env.EMAIL_SENDER || "misc788@gmail.com", // Change to your verified sender
     subject,
     text: token,
     html: getAccountCreatedHtml(user, token),

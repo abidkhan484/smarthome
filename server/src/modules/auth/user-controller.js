@@ -40,7 +40,7 @@ const saveHandler = async (req, res, next) => {
     await update(user, ModelName);
     await sendAccountCreatedEmail(
       user.email,
-      "BizBook365 account created",
+      "Smarthome user account created",
       token,
       user
     );

@@ -49,7 +49,7 @@ const createUserHandler = async (req, res, next) => {
     await update(user, ModelName);
     await sendAccountCreatedEmail(
       user.email,
-      "BizBook365 account created",
+      "Smarthome user account created",
       token,
       user
     );
@@ -174,7 +174,7 @@ const forgotPasswordHandler = async (req, res) => {
       await update(user, ModelName);
       await sendPasswordResetEmail(
         req.body.email,
-        "BizBook365 Password reset",
+        "Smarthome user password reset",
         token
       );
       return res
@@ -246,7 +246,7 @@ const resetPasswordHandler = async (req, res) => {
           await changePassword(user, password);
           await sendPasswordResetSuccessfulEmail(
             user.email,
-            "BizBook365 Password reset successful"
+            "Smarthome user password reset successful"
           );
           return res
             .status(200)
