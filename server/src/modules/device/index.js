@@ -4,6 +4,7 @@ const {
   //   authorizeRequest,
 } = require("../../common/middlewares");
 const { name: ModelName } = require("./model");
+require("./mqtt-handler");
 
 const processRequest = async (req, res, next) => {
   req.modelName = ModelName;
@@ -18,10 +19,6 @@ const init = async (app) => {
     processRequest,
     routes
   );
-
-  app.use(() => {
-    require("./mqtt-handler");
-  });
 
   return app;
 };
