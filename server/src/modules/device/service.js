@@ -27,7 +27,7 @@ const getDeviceAndBrokerInfoOfUser = async (userId, topic) => {
     },
     {
       $match: {
-        "userId._id": userId,
+        "userId._id": ObjectId(userId),
         publishTopic: topic,
       },
     },

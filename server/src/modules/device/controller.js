@@ -30,7 +30,7 @@ const updateDeviceStatus = async (req, res, next) => {
   eventEmitter.emit("msgToBroker", {
     userId: req.user.id,
     topic: topic,
-    message: status,
+    message: status.toString(),
   });
   await updateHandler(req, res, next);
 };
