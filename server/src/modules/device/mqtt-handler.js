@@ -23,15 +23,13 @@ eventEmitter.on("msgToBroker", async ({ userId, topic, message }) => {
     logger.info(`Broker info not found in DB with userId ${userId} and topic ${topic}`);
     process.exit();
   }
-  // decrypt the broker hashed password
-  const password = deviceData.userId.brokerPasswordHash;
   const clientId = `${deviceData.userId.username}_${deviceData.deviceId}`;
   const options = {
     retain: true,
     connectTimeout: process.env.BROKER_CONNECT_TIMEOUT,
     clientId: clientId,
-    username: deviceData.userId.username,
-    password: password,
+    username: process.env.BROKER_USERNAME,
+    password: process.env.BROKER_PASSWORD,
     qos: 2,
   };
   await sendMessage(topic, message, options);

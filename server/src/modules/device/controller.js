@@ -32,7 +32,15 @@ const updateDeviceStatus = async (req, res, next) => {
     topic: topic,
     message: status.toString(),
   });
-  await updateHandler(req, res, next);
+
+  try {
+    return res
+      .status(200)
+      .send({ success: true, message: `${ModelName} updated` });
+  } catch (error) {
+    return next(error, req, res);
+  }
+  // await updateHandler(req, res, next);
 };
 
 router.get("/detail", getByIdHandler);

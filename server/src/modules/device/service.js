@@ -22,7 +22,6 @@ const getDeviceAndBrokerInfoOfUser = async (userId, topic) => {
         publishTopic: 1,
         "userId._id": 1,
         "userId.username": 1,
-        "userId.brokerPasswordHash": 1,
       },
     },
     {
